@@ -42,8 +42,8 @@ class TimeSlotController extends Controller
     {
         $rules = [
             'trainer_availability_id' => 'required|exists:trainer_availabilities,id',
-            'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i|after:start_time',
+            'start_time' => 'required|date_format:H:i:s',
+            'end_time' => 'required|date_format:H:i:s|after:start_time',
             'duration_minutes' => 'required|integer|min:15',
             'price' => 'required|numeric|min:0',
         ];
@@ -135,8 +135,8 @@ class TimeSlotController extends Controller
         }
         
         $rules = [
-            'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i|after:start_time',
+            'start_time' => 'required|date_format:H:i:s',
+            'end_time' => 'required|date_format:H:i:s|after:start_time',
             'duration_minutes' => 'required|integer|min:15',
             'price' => 'required|numeric|min:0',
             'status' => 'required|in:available,cancelled,booked',
